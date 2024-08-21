@@ -11,10 +11,10 @@ module riscv_top
 (
 	input i_clk,
 	input i_rstn,
+	output o_riscv_dmem_wr_en,
 	output [`XLEN-1:0] o_riscv_imem_pc,
 	output [`XLEN-1:0] o_riscv_imem_instr,
 	output [`XLEN-1:0] o_riscv_dmem_addr,
-	output o_riscv_dmem_wr_en,
 	output [`XLEN-1:0] o_riscv_dmem_wr_data,
 	output [`XLEN-1:0] o_riscv_dmem_rd_data,
 	output [`XLEN/8-1:0] o_riscv_dmem_byte_sel

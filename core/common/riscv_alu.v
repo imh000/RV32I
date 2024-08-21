@@ -1,4 +1,4 @@
-`ifndef		NOINC
+`ifndef	NOINC
 `include	"riscv_configs.v"
 `endif
 
@@ -23,6 +23,7 @@ module riscv_alu
 			`ALU_CTRL_SRA	  : o_alu_result = $signed(i_alu_a) >>> $signed(i_alu_b[4:0]);
 			`ALU_CTRL_SLT	  : o_alu_result = ($signed(i_alu_a) < $signed(i_alu_b)) ? `XLEN'd1 : `XLEN'd0;
 			`ALU_CTRL_SLTU	  : o_alu_result = (i_alu_a < i_alu_b) ? `XLEN'd1 : `XLEN'd0;
+			default : o_alu_result = `XLEN'dx;
 		endcase
 	end
 
@@ -42,6 +43,7 @@ module riscv_alu
                 `ALU_CTRL_SRA	  : DEBUG_ALU_OP = "SRA";
                 `ALU_CTRL_SLT	  : DEBUG_ALU_OP = "SLT";
                 `ALU_CTRL_SLTU	  : DEBUG_ALU_OP = "SLTU";
+				default			  : DEBUG_ALU_OP = "undef";
 			endcase
 		end
 	`endif

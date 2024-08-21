@@ -1,4 +1,6 @@
+`ifndef NOINC
 `include "../common/riscv_configs.v"
+`endif
 
 module riscv_mux
 #(

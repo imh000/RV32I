@@ -19,10 +19,10 @@ module riscv_register_file
 
 	initial registers[0] = `XLEN'b0;
 
-	always @ (posedge i_clk) begin
-		if(i_regfile_rd_wen && (i_regfile_rd_addr != 0))
-			registers[i_regfile_rd_addr] <= i_regfile_rd_data;
-		else
-			registers[i_regfile_rd_addr] <= registers[i_regfile_rd_addr];
+	always @ (*) begin
+		if(i_clk) begin
+			if(i_regfile_rd_wen && (i_regfile_rd_addr != 0))
+				registers[i_regfile_rd_addr] = i_regfile_rd_data;
+		end
 	end
 endmodule

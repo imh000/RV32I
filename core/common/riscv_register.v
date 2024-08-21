@@ -7,8 +7,8 @@ module riscv_register
 (
 	input				   i_clk,
 	input				   i_rstn,
-	input				   i_register_en  ,
-	input	   [`XLEN-1:0] i_register_d   ,
+	input				   i_register_en,
+	input	   [`XLEN-1:0] i_register_d,
 	output reg [`XLEN-1:0] o_register_q
 );
 

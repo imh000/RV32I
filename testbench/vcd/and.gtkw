@@ -1,0 +1,66 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Tue Aug 20 06:41:37 2024
+[*]
+[dumpfile] "/home/limh/projects/verilog_tutorials/RV32I/testbench/vcd/and.vcd"
+[dumpfile_mtime] "Tue Aug 20 05:25:14 2024"
+[dumpfile_size] 272867
+[savefile] "/home/limh/projects/verilog_tutorials/RV32I/testbench/vcd/and.gtkw"
+[timestart] 85
+[size] 2318 994
+[pos] -158 -55
+*-2.901014 109 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] TOP.
+[treeopen] TOP.riscv_top.
+[treeopen] TOP.riscv_top.u_riscv_id.
+[treeopen] TOP.riscv_top.u_riscv_if.
+[sst_width] 214
+[signals_width] 262
+[sst_expanded] 1
+[sst_vpaned_height] 290
+@24
+TOP.riscv_top.u_riscv_if.current_pc[31:0]
+@820
+TOP.riscv_top.u_riscv_id.u_riscv_control_unit.DEBUG_INSTR[255:0]
+@c00024
+TOP.riscv_top.u_riscv_id.o_id_rs1_addr[4:0]
+@28
+(0)TOP.riscv_top.u_riscv_id.o_id_rs1_addr[4:0]
+(1)TOP.riscv_top.u_riscv_id.o_id_rs1_addr[4:0]
+(2)TOP.riscv_top.u_riscv_id.o_id_rs1_addr[4:0]
+(3)TOP.riscv_top.u_riscv_id.o_id_rs1_addr[4:0]
+(4)TOP.riscv_top.u_riscv_id.o_id_rs1_addr[4:0]
+@1401200
+-group_end
+@24
+TOP.riscv_top.u_riscv_id.o_id_rs2_addr[4:0]
+TOP.riscv_top.u_riscv_id.o_id_rd_addr[4:0]
+TOP.riscv_top.u_riscv_id.u_riscv_register_file.i_regfile_rd_addr[4:0]
+@28
+TOP.riscv_top.u_riscv_ex.i_ForwardAE[1:0]
+TOP.riscv_top.u_riscv_ex.i_ForwardBE[1:0]
+@421
+TOP.riscv_top.u_riscv_id.u_riscv_register_file.i_regfile_rd_data[31:0]
+TOP.riscv_top.u_riscv_id.u_riscv_register_file.o_regfile_rs1_data[31:0]
+TOP.riscv_top.u_riscv_id.u_riscv_register_file.o_regfile_rs2_data[31:0]
+TOP.riscv_top.u_riscv_id.u_riscv_register_file.registers(11)[31:0]
+TOP.riscv_top.u_riscv_id.u_riscv_register_file.registers(12)[31:0]
+@24
+TOP.riscv_top.u_riscv_id.u_riscv_register_file.registers(14)[31:0]
+@421
+TOP.riscv_top.u_riscv_ex.i_ex_forward_alu_result[31:0]
+TOP.riscv_top.u_riscv_ex.i_ex_forward_rd_data[31:0]
+@24
+TOP.riscv_top.u_riscv_id.u_riscv_register_file.registers(15)[31:0]
+TOP.riscv_top.u_riscv_ex.i_ex_imm[31:0]
+@421
+TOP.riscv_top.u_riscv_ex.alu_a[31:0]
+TOP.riscv_top.u_riscv_ex.alu_b[31:0]
+TOP.riscv_top.u_riscv_ex.o_ex_alu_result[31:0]
+@28
+TOP.riscv_top.ex_flush
+TOP.riscv_top.id_flush
+TOP.riscv_top.id_stall
+TOP.riscv_top.if_stall
+[pattern_trace] 1
+[pattern_trace] 0

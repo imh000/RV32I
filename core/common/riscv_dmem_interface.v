@@ -24,7 +24,7 @@ module riscv_dmem_interface
 
 	// To Data Memory
 	assign o_dmem_intf_wr_data = i_dmem_intf_wr_data << (8*i_dmem_intf_addr[1:0]);
-	assign o_dmem_intf_byte_sel = i_dmem_intf_byte_sel << (i_dmem_intf_addr[1:0]);
+	assign o_dmem_intf_byte_sel = i_dmem_intf_byte_sel << (1*i_dmem_intf_addr[1:0]);
 
 	wire [`XLEN-1:0] byte_aligned_dmem_rd_data;
 

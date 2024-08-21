@@ -81,14 +81,14 @@ module riscv_cpu
 		.i_dmem_intf_addr		(dmem_addr				),
 		.i_dmem_intf_wr_en		(dmem_wr_en				),
 		.i_dmem_intf_wr_data	(dmem_wr_data			),
-		.i_dmem_intf_rd_data	(dmem_rd_data			),
+		.i_dmem_intf_rd_data	(i_cpu_imem_rd_data		),
 		.i_dmem_intf_byte_sel	(dmem_byte_sel			),
 		.i_dmem_intf_func3		(i_cpu_imem_instr[14:12]),
 		.o_dmem_intf_addr		(o_cpu_dmem_arr			),
 		.o_dmem_intf_wr_en		(o_cpu_dmem_wr_en		),
 		.o_dmem_intf_wr_data	(o_cpu_dmem_wr_data		),
 		.o_dmem_intf_byte_sel	(o_cpu_dmem_byte_sel	),
-		.o_dmem_intf_rd_data	(i_cpu_imem_rd_data		)
+		.o_dmem_intf_rd_data	(dmem_rd_data			)
 	);
 
 endmodule

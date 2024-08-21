@@ -14,9 +14,13 @@ module riscv_dmem
 
 	reg [`XLEN-1:0] dmem_arr [0:2**(`DMEM_ADDR_BIT-2)-1];
 
-	`ifdef DMEM_INIT
-		initial $readmemh(`DMEM_INIT_FILE, dmem_arr);
-	`endif
+`ifdef	DMEM_INIT
+	reg	[8*128-1:0] FILE_DATA_MIF;
+	initial	begin
+		$value$plusargs("data_mif=%s", FILE_DATA_MIF);
+		$readmemh(FILE_DATA_MIF, dmem_arr);
+	end
+`endif
 
 	// Memory Read (output is not swtiching during write)
 	assign o_dmem_data = dmem_arr[i_dmem_addr];
@@ -25,7 +29,7 @@ module riscv_dmem
 	integer i;
 	always @ (posedge i_clk) begin
 		if(i_dmem_wr_en) begin
-			for(i=0; i<`XLEN/8; i=i+1) begin
+			for(i=0; i<`XLEN/8; i++) begin
 				if(i_dmem_byte_sel[i])
 					dmem_arr[i_dmem_addr][8*i+:8] <= i_dmem_data[8*i+:8];
 			end
