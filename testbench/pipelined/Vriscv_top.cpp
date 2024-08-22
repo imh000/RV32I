@@ -31,7 +31,7 @@ void Vriscv_top::eval_step() {
             Verilated::debug(1);
             __Vchange = _change_request(vlSymsp);
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("/home/limh/projects/verilog_tutorials/RV32I/core/pipelined/riscv_top.v", 16, "",
+            VL_FATAL_MT("/home/limh/projects/verilog_tutorials/RV32I/core/pipelined/riscv_top.v", 15, "",
                 "Verilated model didn't converge\n"
                 "- See DIDNOTCONVERGE in the Verilator manual");
         } else {
@@ -57,7 +57,7 @@ void Vriscv_top::_eval_initial_loop(Vriscv_top__Syms* __restrict vlSymsp) {
             Verilated::debug(1);
             __Vchange = _change_request(vlSymsp);
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("/home/limh/projects/verilog_tutorials/RV32I/core/pipelined/riscv_top.v", 16, "",
+            VL_FATAL_MT("/home/limh/projects/verilog_tutorials/RV32I/core/pipelined/riscv_top.v", 15, "",
                 "Verilated model didn't DC converge\n"
                 "- See DIDNOTCONVERGE in the Verilator manual");
         } else {
@@ -117,9 +117,9 @@ VL_INLINE_OPT void Vriscv_top::_sequent__TOP__2(Vriscv_top__Syms* __restrict vlS
               ? 0U : ((IData)(vlTOPp->riscv_top__DOT__id_stall)
                        ? vlTOPp->riscv_top__DOT__id_instr
                        : vlTOPp->o_riscv_imem_instr));
+        vlTOPp->riscv_top__DOT__mem_funct3 = vlTOPp->riscv_top__DOT__ex_funct3;
         vlTOPp->riscv_top__DOT__ex_pc = ((IData)(vlTOPp->riscv_top__DOT__ex_flush)
                                           ? 0U : vlTOPp->riscv_top__DOT__id_pc);
-        vlTOPp->riscv_top__DOT__mem_funct3 = vlTOPp->riscv_top__DOT__ex_funct3;
         vlTOPp->riscv_top__DOT__ex_ctrl_alu_control 
             = ((IData)(vlTOPp->riscv_top__DOT__ex_flush)
                 ? 0U : (IData)(vlTOPp->riscv_top__DOT__id_ctrl_alu_control));
@@ -178,8 +178,8 @@ VL_INLINE_OPT void Vriscv_top::_sequent__TOP__2(Vriscv_top__Syms* __restrict vlS
         vlTOPp->riscv_top__DOT__ex_ctrl_jump = 0U;
         vlTOPp->riscv_top__DOT__ex_ctrl_branch = 0U;
         vlTOPp->__Vdly__riscv_top__DOT__id_instr = 0U;
-        vlTOPp->riscv_top__DOT__ex_pc = 0U;
         vlTOPp->riscv_top__DOT__mem_funct3 = 0U;
+        vlTOPp->riscv_top__DOT__ex_pc = 0U;
         vlTOPp->riscv_top__DOT__ex_ctrl_alu_control = 0U;
         vlTOPp->riscv_top__DOT__u_riscv_if__DOT__current_pc = 0U;
         vlTOPp->riscv_top__DOT__ex_ctrl_alu_b_src = 0U;
@@ -219,10 +219,6 @@ VL_INLINE_OPT void Vriscv_top::_sequent__TOP__2(Vriscv_top__Syms* __restrict vlS
         vlTOPp->riscv_top__DOT__ex_ctrl_byte_sel = 0U;
         vlTOPp->riscv_top__DOT__ex_funct3 = 0U;
     }
-    vlTOPp->__Vtableidx5 = vlTOPp->riscv_top__DOT__ex_ctrl_alu_control;
-    vlTOPp->riscv_top__DOT__u_riscv_ex__DOT__u_riscv_alu__DOT__DEBUG_ALU_OP 
-        = vlTOPp->__Vtable5_riscv_top__DOT__u_riscv_ex__DOT__u_riscv_alu__DOT__DEBUG_ALU_OP
-        [vlTOPp->__Vtableidx5];
     vlTOPp->o_riscv_imem_pc = vlTOPp->riscv_top__DOT__u_riscv_if__DOT__current_pc;
     vlTOPp->o_riscv_imem_instr = vlTOPp->riscv_top__DOT__u_riscv_if__DOT__u_riscv_imem__DOT__imem_arr
         [(0x3fffU & (vlTOPp->riscv_top__DOT__u_riscv_if__DOT__current_pc 
@@ -251,9 +247,9 @@ VL_INLINE_OPT void Vriscv_top::_sequent__TOP__2(Vriscv_top__Syms* __restrict vlS
         vlTOPp->riscv_top__DOT__ex_pc_plus_4 = 0U;
         vlTOPp->riscv_top__DOT__ex_imm = 0U;
     }
-    vlTOPp->riscv_top__DOT__u_riscv_wb__DOT__u_riscv_mux__DOT__mux_input_arr[0U] 
+    vlTOPp->riscv_top__DOT__u_riscv_wb__DOT__u_riscv_mux_wb__DOT__mux_input_arr[0U] 
         = (IData)(vlTOPp->riscv_top__DOT__u_riscv_wb__DOT__mux_concat_rd);
-    vlTOPp->riscv_top__DOT__u_riscv_wb__DOT__u_riscv_mux__DOT__mux_input_arr[1U] 
+    vlTOPp->riscv_top__DOT__u_riscv_wb__DOT__u_riscv_mux_wb__DOT__mux_input_arr[1U] 
         = (IData)((vlTOPp->riscv_top__DOT__u_riscv_wb__DOT__mux_concat_rd 
                    >> 0x20U));
     vlTOPp->riscv_top__DOT__id_pc_plus_4 = __Vdly__riscv_top__DOT__id_pc_plus_4;
@@ -402,7 +398,7 @@ VL_INLINE_OPT void Vriscv_top::_sequent__TOP__6(Vriscv_top__Syms* __restrict vlS
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vriscv_top::_sequent__TOP__6\n"); );
     Vriscv_top* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    vlTOPp->riscv_top__DOT__wb_rd_data = vlTOPp->riscv_top__DOT__u_riscv_wb__DOT__u_riscv_mux__DOT__mux_input_arr
+    vlTOPp->riscv_top__DOT__wb_rd_data = vlTOPp->riscv_top__DOT__u_riscv_wb__DOT__u_riscv_mux_wb__DOT__mux_input_arr
         [vlTOPp->riscv_top__DOT__wb_ctrl_rd_src];
     vlTOPp->riscv_top__DOT__wb_ctrl_reg_write = ((IData)(vlTOPp->i_rstn) 
                                                  & (IData)(vlTOPp->riscv_top__DOT__mem_ctrl_reg_write));
@@ -658,35 +654,6 @@ VL_INLINE_OPT void Vriscv_top::_sequent__TOP__6(Vriscv_top__Syms* __restrict vlS
     vlTOPp->__Vtableidx1 = (0x7fU & vlTOPp->riscv_top__DOT__id_instr);
     vlTOPp->riscv_top__DOT__id_ctrl_result_src = vlTOPp->__Vtable1_riscv_top__DOT__id_ctrl_result_src
         [vlTOPp->__Vtableidx1];
-    vlTOPp->__Vtableidx3 = ((0x400U & (vlTOPp->riscv_top__DOT__id_instr 
-                                       >> 0x14U)) | 
-                            ((0x380U & (vlTOPp->riscv_top__DOT__id_instr 
-                                        >> 5U)) | (0x7fU 
-                                                   & vlTOPp->riscv_top__DOT__id_instr)));
-    vlTOPp->riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR[0U] 
-        = vlTOPp->__Vtable3_riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR
-        [vlTOPp->__Vtableidx3][0U];
-    vlTOPp->riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR[1U] 
-        = vlTOPp->__Vtable3_riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR
-        [vlTOPp->__Vtableidx3][1U];
-    vlTOPp->riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR[2U] 
-        = vlTOPp->__Vtable3_riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR
-        [vlTOPp->__Vtableidx3][2U];
-    vlTOPp->riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR[3U] 
-        = vlTOPp->__Vtable3_riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR
-        [vlTOPp->__Vtableidx3][3U];
-    vlTOPp->riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR[4U] 
-        = vlTOPp->__Vtable3_riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR
-        [vlTOPp->__Vtableidx3][4U];
-    vlTOPp->riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR[5U] 
-        = vlTOPp->__Vtable3_riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR
-        [vlTOPp->__Vtableidx3][5U];
-    vlTOPp->riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR[6U] 
-        = vlTOPp->__Vtable3_riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR
-        [vlTOPp->__Vtableidx3][6U];
-    vlTOPp->riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR[7U] 
-        = vlTOPp->__Vtable3_riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR
-        [vlTOPp->__Vtableidx3][7U];
     vlTOPp->__Vtableidx2 = (0x7fU & vlTOPp->riscv_top__DOT__id_instr);
     vlTOPp->riscv_top__DOT__u_riscv_id__DOT__id_imm_src 
         = vlTOPp->__Vtable2_riscv_top__DOT__u_riscv_id__DOT__id_imm_src
@@ -871,27 +838,24 @@ VL_INLINE_OPT void Vriscv_top::_sequent__TOP__6(Vriscv_top__Syms* __restrict vlS
         = (IData)(((((QData)((IData)(vlTOPp->riscv_top__DOT__ex_alu_result)) 
                      << 0x20U) | (QData)((IData)(vlTOPp->riscv_top__DOT__ex_pc_plus_imm))) 
                    >> 0x20U));
-    vlTOPp->__Vtableidx4 = (((0U == vlTOPp->riscv_top__DOT__ex_alu_result) 
+    vlTOPp->__Vtableidx3 = (((0U == vlTOPp->riscv_top__DOT__ex_alu_result) 
                              << 3U) | (IData)(vlTOPp->riscv_top__DOT__ex_funct3));
     vlTOPp->riscv_top__DOT__u_riscv_ex__DOT__take_branch 
-        = vlTOPp->__Vtable4_riscv_top__DOT__u_riscv_ex__DOT__take_branch
-        [vlTOPp->__Vtableidx4];
+        = vlTOPp->__Vtable3_riscv_top__DOT__u_riscv_ex__DOT__take_branch
+        [vlTOPp->__Vtableidx3];
     vlTOPp->riscv_top__DOT__u_riscv_if__DOT__u_riscv_mux_pc__DOT__mux_input_arr[0U] 
         = vlTOPp->riscv_top__DOT__u_riscv_if__DOT__mux_concat_pc[0U];
     vlTOPp->riscv_top__DOT__u_riscv_if__DOT__u_riscv_mux_pc__DOT__mux_input_arr[1U] 
         = vlTOPp->riscv_top__DOT__u_riscv_if__DOT__mux_concat_pc[1U];
     vlTOPp->riscv_top__DOT__u_riscv_if__DOT__u_riscv_mux_pc__DOT__mux_input_arr[2U] 
         = vlTOPp->riscv_top__DOT__u_riscv_if__DOT__mux_concat_pc[2U];
-    vlTOPp->riscv_top__DOT__ex_src_pc = (((IData)(vlTOPp->riscv_top__DOT__ex_ctrl_branch) 
-                                          & (IData)(vlTOPp->riscv_top__DOT__u_riscv_ex__DOT__take_branch))
-                                          ? 1U : ((1U 
+    vlTOPp->riscv_top__DOT__ex_src_pc = ((((IData)(vlTOPp->riscv_top__DOT__ex_ctrl_branch) 
+                                           & (IData)(vlTOPp->riscv_top__DOT__u_riscv_ex__DOT__take_branch)) 
+                                          | (1U == (IData)(vlTOPp->riscv_top__DOT__ex_ctrl_jump)))
+                                          ? 1U : ((2U 
                                                    == (IData)(vlTOPp->riscv_top__DOT__ex_ctrl_jump))
-                                                   ? 1U
-                                                   : 
-                                                  ((2U 
-                                                    == (IData)(vlTOPp->riscv_top__DOT__ex_ctrl_jump))
-                                                    ? 2U
-                                                    : 0U)));
+                                                   ? 2U
+                                                   : 0U));
     vlTOPp->riscv_top__DOT__id_flush = ((1U == (IData)(vlTOPp->riscv_top__DOT__ex_src_pc)) 
                                         | (2U == (IData)(vlTOPp->riscv_top__DOT__ex_src_pc)));
     vlTOPp->riscv_top__DOT__ex_flush = ((1U == (IData)(vlTOPp->riscv_top__DOT__ex_src_pc)) 

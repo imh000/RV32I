@@ -71,9 +71,7 @@ module riscv_ex
 
 	// o_ex_ctrl_pc_src
 	always @ (*) begin
-		if(i_ex_ctrl_branch && take_branch)
-			o_ex_ctrl_pc_src = 2'b01;
-		else if(i_ex_ctrl_jump == 2'b01)
+		if((i_ex_ctrl_branch && take_branch) || (i_ex_ctrl_jump == 2'b01))
 			o_ex_ctrl_pc_src = 2'b01;
 		else if(i_ex_ctrl_jump == 2'b10)
 			o_ex_ctrl_pc_src = 2'b10;

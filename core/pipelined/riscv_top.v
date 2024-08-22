@@ -10,7 +10,6 @@
 `include "riscv_exmem_reg.v"
 `include "riscv_memwb_reg.v"
 `include "riscv_hazard_unit.v"
-`include "riscv_control_unit.v"
 `endif
 
 module riscv_top

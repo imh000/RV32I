@@ -2,8 +2,6 @@
 `include "../common/riscv_configs.v"
 `endif
 
-`define DEBUG
-
 module riscv_control_unit
 (
 	input [6:0] opcode,

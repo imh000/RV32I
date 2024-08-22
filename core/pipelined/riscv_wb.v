@@ -12,14 +12,13 @@ module riscv_wb
 );
 
 	wire [(2*`XLEN)-1:0] mux_concat_rd;
-//	assign mux_concat_rd = {i_wb_read_data, i_wb_rd_data};
 	assign mux_concat_rd = {i_wb_rd_data, i_wb_read_data};
 
 	riscv_mux
 	#(
 		.N_MUX_IN			(2						)
 	)
-	u_riscv_mux(
+	u_riscv_mux_wb(
 		.i_mux_sel			(i_wb_ctrl_rd_src		),
 		.i_mux_concat_data	(mux_concat_rd			),
 		.o_mux_data			(o_wb_rd_result			)

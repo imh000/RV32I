@@ -45,7 +45,7 @@ module riscv_id
 	assign o_id_funct3 = i_id_instr[14:12];
 
 	riscv_control_unit
-	u_riscv_control_unit(
+	u_riscv_control_unit_id(
 		.opcode				(i_id_instr[6:0]		),
 		.funct3				(i_id_instr[14:12]		),
 		.funct7_5b			(i_id_instr[30]			),

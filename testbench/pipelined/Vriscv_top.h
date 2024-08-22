@@ -105,7 +105,6 @@ VL_MODULE(Vriscv_top) {
     };
     struct {
         WData/*1023:0*/ riscv_top__DOT__u_riscv_if__DOT__u_riscv_imem__DOT__FILE_TEXT_MIF[32];
-        WData/*255:0*/ riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR[8];
         WData/*95:0*/ riscv_top__DOT__u_riscv_ex__DOT__mux_concat_src_rs1[3];
         WData/*95:0*/ riscv_top__DOT__u_riscv_ex__DOT__mux_concat_src_rs2[3];
         IData/*31:0*/ riscv_top__DOT__u_riscv_ex__DOT__src_rs2_data;
@@ -117,7 +116,6 @@ VL_MODULE(Vriscv_top) {
         WData/*1023:0*/ riscv_top__DOT__u_riscv_mem__DOT__u_riscv_dmem__DOT__FILE_DATA_MIF[32];
         IData/*31:0*/ riscv_top__DOT__u_riscv_mem__DOT__u_riscv_dmem__DOT__i;
         QData/*63:0*/ riscv_top__DOT__u_riscv_ex__DOT__mux_concat_alu_b;
-        QData/*63:0*/ riscv_top__DOT__u_riscv_ex__DOT__u_riscv_alu__DOT__DEBUG_ALU_OP;
         QData/*63:0*/ riscv_top__DOT__u_riscv_wb__DOT__mux_concat_rd;
         IData/*31:0*/ riscv_top__DOT__u_riscv_if__DOT__u_riscv_mux_pc__DOT__mux_input_arr[3];
         IData/*31:0*/ riscv_top__DOT__u_riscv_if__DOT__u_riscv_imem__DOT__imem_arr[16384];
@@ -127,25 +125,21 @@ VL_MODULE(Vriscv_top) {
         IData/*31:0*/ riscv_top__DOT__u_riscv_ex__DOT__u_riscv_mux_alu_b__DOT__mux_input_arr[2];
         IData/*31:0*/ riscv_top__DOT__u_riscv_mem__DOT__u_riscv_dmem__DOT__dmem_arr[16384];
         IData/*31:0*/ riscv_top__DOT__u_riscv_mem__DOT__u_riscv_mux_rd__DOT__mux_input_arr[4];
-        IData/*31:0*/ riscv_top__DOT__u_riscv_wb__DOT__u_riscv_mux__DOT__mux_input_arr[2];
+        IData/*31:0*/ riscv_top__DOT__u_riscv_wb__DOT__u_riscv_mux_wb__DOT__mux_input_arr[2];
     };
     
     // LOCAL VARIABLES
     // Internals; generally not touched by application code
     CData/*6:0*/ __Vtableidx1;
     CData/*6:0*/ __Vtableidx2;
-    CData/*3:0*/ __Vtableidx4;
-    CData/*3:0*/ __Vtableidx5;
+    CData/*3:0*/ __Vtableidx3;
     CData/*0:0*/ __Vclklast__TOP__i_clk;
     CData/*0:0*/ __Vclklast__TOP__i_rstn;
-    SData/*10:0*/ __Vtableidx3;
     IData/*31:0*/ __Vdly__riscv_top__DOT__id_instr;
     CData/*0:0*/ __Vm_traceActivity[4];
     static CData/*1:0*/ __Vtable1_riscv_top__DOT__id_ctrl_result_src[128];
     static CData/*2:0*/ __Vtable2_riscv_top__DOT__u_riscv_id__DOT__id_imm_src[128];
-    static WData/*255:0*/ __Vtable3_riscv_top__DOT__u_riscv_id__DOT__u_riscv_control_unit__DOT__DEBUG_INSTR[2048][8];
-    static CData/*0:0*/ __Vtable4_riscv_top__DOT__u_riscv_ex__DOT__take_branch[16];
-    static QData/*63:0*/ __Vtable5_riscv_top__DOT__u_riscv_ex__DOT__u_riscv_alu__DOT__DEBUG_ALU_OP[16];
+    static CData/*0:0*/ __Vtable3_riscv_top__DOT__u_riscv_ex__DOT__take_branch[16];
     
     // INTERNAL VARIABLES
     // Internals; generally not touched by application code
