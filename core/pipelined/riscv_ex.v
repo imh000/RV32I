@@ -12,6 +12,7 @@ module riscv_ex
 	input i_rstn,
 
 	//ex_ctrl
+	input [3:0] i_ex_ctrl_alu_ctrl,
 	input [1:0] i_ex_ctrl_jump,
 	input i_ex_ctrl_branch,
 	input i_ex_ctrl_alu_b_src,
@@ -29,7 +30,6 @@ module riscv_ex
 	input [`XLEN-1:0] i_ex_pc,
 
 	// alu result
-	input [3:0] i_ex_ctrl_alu_ctrl,
 	output o_ex_alu_zero,
 	output [`XLEN-1:0] o_ex_alu_result,
 	output [`XLEN-1:0] o_ex_write_data,

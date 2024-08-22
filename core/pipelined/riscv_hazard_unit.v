@@ -49,7 +49,7 @@ module riscv_hazard_unit
 
 	// lw stall
 	always @ (*) begin
-		if(((i_id_rs1_addr == i_ex_rd_addr) || (i_id_rs2_addr == i_ex_rd_addr)) && (i_ex_ctrl_rd_src == 1'b1)) begin
+		if(((i_id_rs1_addr == i_ex_rd_addr) || (i_id_rs2_addr == i_ex_rd_addr)) && (i_ex_ctrl_rd_src == 1'b0)) begin
 			o_if_stall = 1'b1;
 			o_id_stall = 1'b1;
 			o_ex_flush = 1'b1;

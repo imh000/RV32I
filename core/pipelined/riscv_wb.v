@@ -12,7 +12,8 @@ module riscv_wb
 );
 
 	wire [(2*`XLEN)-1:0] mux_concat_rd;
-	assign mux_concat_rd = {i_wb_read_data, i_wb_rd_data};
+//	assign mux_concat_rd = {i_wb_read_data, i_wb_rd_data};
+	assign mux_concat_rd = {i_wb_rd_data, i_wb_read_data};
 
 	riscv_mux
 	#(

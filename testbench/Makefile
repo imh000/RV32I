@@ -22,7 +22,7 @@ RTL_FILE	=	$(RTL_PATH)/$(CPU_TYPE)/$(RTL_NAME).v
 #	Verilator
 # --------------------------------------------------
 VRL_TBCPP	=	tb.cpp
-VRL_FLAGS	=	-Wno-MODDUP --trace
+VRL_FLAGS	=	-Wno-fatal --trace
 VRL_FLAGS	+=	-I$(RTL_PATH)/common
 VRL_FLAGS	+=	-I$(RTL_PATH)/$(CPU_TYPE)
 VCD_FLAG	=	+vcd

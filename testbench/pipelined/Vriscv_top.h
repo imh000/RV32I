@@ -183,9 +183,6 @@ VL_MODULE(Vriscv_top) {
   private:
     static QData _change_request(Vriscv_top__Syms* __restrict vlSymsp);
     static QData _change_request_1(Vriscv_top__Syms* __restrict vlSymsp);
-  public:
-    static void _combo__TOP__5(Vriscv_top__Syms* __restrict vlSymsp);
-  private:
     void _ctor_var_reset() VL_ATTR_COLD;
   public:
     static void _eval(Vriscv_top__Syms* __restrict vlSymsp);
@@ -199,8 +196,9 @@ VL_MODULE(Vriscv_top) {
     static void _initial__TOP__1(Vriscv_top__Syms* __restrict vlSymsp) VL_ATTR_COLD;
     static void _sequent__TOP__2(Vriscv_top__Syms* __restrict vlSymsp);
     static void _sequent__TOP__3(Vriscv_top__Syms* __restrict vlSymsp);
+    static void _sequent__TOP__4(Vriscv_top__Syms* __restrict vlSymsp);
     static void _sequent__TOP__6(Vriscv_top__Syms* __restrict vlSymsp);
-    static void _settle__TOP__4(Vriscv_top__Syms* __restrict vlSymsp) VL_ATTR_COLD;
+    static void _settle__TOP__5(Vriscv_top__Syms* __restrict vlSymsp) VL_ATTR_COLD;
   private:
     static void traceChgSub0(void* userp, VerilatedVcd* tracep);
     static void traceChgTop0(void* userp, VerilatedVcd* tracep);

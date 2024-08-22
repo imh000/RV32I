@@ -62,8 +62,8 @@ module riscv_control_unit
 	// rd_src
 	always @ (*) begin
 		case(opcode)
-			`OPCODE_I_LOAD : rd_src = 1'b1;
-			default : rd_src = 1'b0;
+			`OPCODE_I_LOAD : rd_src = 1'b0;
+			default : rd_src = 1'b1;
 		endcase
 	end
 
