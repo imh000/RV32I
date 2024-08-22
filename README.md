@@ -13,3 +13,5 @@
 - Access an operand in data memory (if necessary)
 ## WB stage
 - Write the result into a RD registers (if necessary)
+## Verilator result
+![스크린샷 2024-08-22 133420](https://github.com/user-attachments/assets/73774830-4ab4-499a-8a00-b2f3f634f096)
